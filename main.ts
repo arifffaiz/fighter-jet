@@ -31,9 +31,6 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
     dart2 = sprites.createProjectileFromSprite(assets.image`Bullets`, Fighter_plane, 200, 0)
     music.play(music.melodyPlayable(music.pewPew), music.PlaybackMode.UntilDone)
 })
-sprites.onOverlap(SpriteKind.create(), SpriteKind.Player, function (sprite, otherSprite) {
-	
-})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     music.play(music.melodyPlayable(music.smallCrash), music.PlaybackMode.UntilDone)
@@ -53,7 +50,7 @@ let TimeBetweenPresses = 0
 let LastPressed = 0
 let Fighter_plane: Sprite = null
 let projectile = null
-game.splash("Press A to start")
+game.splash("FIGHTER JET")
 game.splash("Move your plane with joystick and shoot the gun with A")
 scene.setBackgroundColor(9)
 effects.clouds.startScreenEffect()
@@ -68,5 +65,4 @@ game.onUpdateInterval(500, function () {
     mySprite2.setVelocity(-100, 0)
     mySprite2.left = scene.screenWidth()
     mySprite2.y = randint(0, scene.screenHeight())
-    mySprite2.setFlag(SpriteFlag.AutoDestroy, true)
 })
